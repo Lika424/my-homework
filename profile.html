@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Регистрация | Онлайн-библиотека</title>
+    <link href="./settings.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+
+    <header class="Shapka">
+        <div class="logo">📚 Библиотека</div>
+        <nav>
+            <button><a href="home.html">На главную</a></button>
+            <button><a href="catalog.html">Каталог</a></button>
+            <button><a href="profile.html">Регистрация</a></button>
+        </nav>
+    </header>
+
+    <h1>Регистрация</h1>
+    <p class="subtitle">Создайте аккаунт, чтобы бронировать книги и следить за заказами.</p>
+
+    <div class="form-container">
+        <form action="#" method="post">
+
+            <label for="name">Имя</label><br>
+            <input type="text" id="name" name="name" placeholder="Введите ваше имя" required> <br><br>
+
+            <label for="email">Email</label><br>
+            <input type="email" id="email" name="email" placeholder="example@mail.ru" required> <br><br>
+
+            <label for="pwd">Пароль</label><br>
+            <input type="password" id="pwd" name="pwd" placeholder="Минимум 6 символов" minlength="6" required> <br><br>
+
+            <label>Выберите пол</label><br>
+            <input type="radio" id="gender-m" name="gender" value="male" required>
+            <label for="gender-m">Мужской</label><br>
+            <input type="radio" id="gender-f" name="gender" value="female">
+            <label for="gender-f">Женский</label><br><br>
+
+            <input type="checkbox" id="agree-data" name="agree-data" required>
+            <label for="agree-data">Я даю согласие на обработку данных</label><br>
+            <input type="checkbox" id="agree-news" name="agree-news">
+            <label for="agree-news">Я даю согласие на получение рассылки</label><br><br>
+
+            <button type="submit" class="btn-submit">Зарегистрироваться</button>
+
+        </form>
+
+        <p class="login-link">Уже есть аккаунт? <a href="login.html">Войти</a></p>
+    </div>
+
+    <footer>
+        <p>© 2026 Онлайн-библиотека. Все права защищены.</p>
+        <p>Контакты: info@library.ru | +7 (999) 123-45-67</p>
+    </footer>
+
+</body>
+</html>

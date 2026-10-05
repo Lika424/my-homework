@@ -1,0 +1,342 @@
+/* ПЕРЕМЕННЫЕ И БАЗОВЫЕ НАСТРОЙКИ */
+
+:root {
+    --primary: #6b4f3b;        /* Основной (коричневый, "книжный") */
+    --primary-light: #8a6a52;  /* Светлее основного */
+    --accent: #d4a373;         /* Акцент (золотистый) */
+    --bg: #fdfaf6;             /* Фон страницы (тёплый белый) */
+    --card-bg: #ffffff;        /* Фон карточек */
+    --text: #2e2a26;           /* Основной текст */
+    --text-light: #6b6b6b;     /* Второстепенный текст */
+    --border: #e6ddd3;         /* Границы */
+    --shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
+    --radius: 12px;            /* Скругление углов */
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+    padding: 0 0 40px;
+}
+
+/* ШАПКА САЙТА */
+
+.Shapka {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    background-color: var(--primary);
+    padding: 15px 40px;
+    box-shadow: var(--shadow);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.Shapka .logo {
+    color: #fff;
+    font-size: 1.4rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.Shapka nav {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.Shapka button {
+    background-color: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    border-radius: 8px;
+    padding: 8px 16px;
+    cursor: pointer;
+    transition: all 0.25s ease;
+}
+
+.Shapka button:hover {
+    background-color: var(--accent);
+    border-color: var(--accent);
+    transform: translateY(-2px);
+}
+
+.Shapka button a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 0.95rem;
+    font-weight: 500;
+}
+
+/* ЗАГОЛОВКИ И ОБЩИЕ ЭЛЕМЕНТЫ*/
+
+h1 {
+    text-align: center;
+    font-size: 2.2rem;
+    color: var(--primary);
+    margin: 40px 20px 10px;
+}
+
+h2 {
+    font-size: 1.4rem;
+    color: var(--primary);
+    margin-bottom: 15px;
+    padding-bottom: 8px;
+    border-bottom: 2px solid var(--accent);
+    display: inline-block;
+}
+
+.subtitle {
+    text-align: center;
+    color: var(--text-light);
+    font-size: 1.1rem;
+    margin-bottom: 30px;
+    padding: 0 20px;
+}
+
+a {
+    color: var(--primary-light);
+    transition: color 0.2s ease;
+}
+
+a:hover {
+    color: var(--accent);
+}
+
+/* БЛОКИ С КНИГАМИ (главная страница) */
+
+.book-block {
+    max-width: 800px;
+    margin: 30px auto;
+    background-color: var(--card-bg);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    padding: 25px 30px;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.book-block:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+.book-block .content {
+    float: left;
+    width: 280px;
+    height: auto;             
+    max-height: 350px;
+    object-fit: contain;     
+    border-radius: var(--radius);
+    margin: 5px 20px 15px 0;
+    box-shadow: var(--shadow);
+}
+
+.book-block p {
+    margin-bottom: 12px;
+    color: var(--text);
+}
+
+.book-block strong {
+    color: var(--primary);
+}
+
+/* БЛОК ЖАНРОВ */
+
+.genres {
+    max-width: 800px;
+    margin: 40px auto;
+    background-color: var(--card-bg);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    padding: 25px 30px;
+}
+
+.genres ul {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 15px;
+}
+
+.genres li {
+    background-color: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    padding: 8px 18px;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: all 0.25s ease;
+}
+
+.genres li:hover {
+    background-color: var(--accent);
+    color: #fff;
+    border-color: var(--accent);
+    transform: translateY(-2px);
+}
+
+/* ФОРМА РЕГИСТРАЦИИ */
+
+.form-container {
+    max-width: 500px;
+    margin: 30px auto;
+    background-color: var(--card-bg);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    padding: 35px 40px;
+}
+
+.form-container label {
+    font-weight: 500;
+    color: var(--text);
+    font-size: 0.95rem;
+}
+
+.form-container input[type="text"],
+.form-container input[type="email"],
+.form-container input[type="password"] {
+    width: 100%;
+    padding: 10px 14px;
+    margin-top: 5px;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    font-size: 1rem;
+    font-family: inherit;
+    background-color: var(--bg);
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.form-container input[type="text"]:focus,
+.form-container input[type="email"]:focus,
+.form-container input[type="password"]:focus {
+    outline: none;
+    border-color: var(--accent);
+    box-shadow: 0 0 0 3px rgba(212, 163, 115, 0.2);
+}
+
+.form-container input[type="radio"],
+.form-container input[type="checkbox"] {
+    accent-color: var(--accent);
+    cursor: pointer;
+    margin-right: 6px;
+}
+
+.form-container label[for="gender-m"],
+.form-container label[for="gender-f"],
+.form-container label[for="agree-data"],
+.form-container label[for="agree-news"] {
+    font-weight: 400;
+    cursor: pointer;
+}
+
+/* Кнопка отправки */
+.btn-submit {
+    display: block;
+    width: 100%;
+    background-color: var(--primary);
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 12px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.25s ease;
+    margin-top: 10px;
+}
+
+.btn-submit:hover {
+    background-color: var(--accent);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(212, 163, 115, 0.4);
+}
+
+.login-link {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 0.95rem;
+    color: var(--text-light);
+}
+
+.login-link a {
+    font-weight: 600;
+    text-decoration: none;
+}
+
+/* ПОДВАЛ */
+footer {
+    text-align: center;
+    padding: 25px 20px;
+    margin-top: 50px;
+    color: var(--text-light);
+    font-size: 0.9rem;
+    border-top: 1px solid var(--border);
+}
+
+footer p {
+    margin: 4px 0;
+}
+
+/* АДАПТИВНОСТЬ (для телефонов) */
+
+@media (max-width: 768px) {
+    .Shapka {
+        flex-direction: column;
+        padding: 15px 20px;
+        text-align: center;
+    }
+
+    .Shapka nav {
+        justify-content: center;
+    }
+
+    h1 {
+        font-size: 1.7rem;
+    }
+
+    h2 {
+        font-size: 1.2rem;
+    }
+
+    .book-block,
+    .genres,
+    .form-container {
+        margin-left: 15px;
+        margin-right: 15px;
+        padding: 20px;
+    }
+
+    .book-block .content {
+        max-height: 250px;
+    }
+}
+
+@media (max-width: 480px) {
+    .Shapka button {
+        padding: 6px 12px;
+    }
+
+    .Shapka button a {
+        font-size: 0.85rem;
+    }
+
+    h1 {
+        font-size: 1.4rem;
+    }
+
+    .genres li {
+        font-size: 0.85rem;
+        padding: 6px 14px;
+    }
+}
