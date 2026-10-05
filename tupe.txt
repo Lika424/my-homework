@@ -1,0 +1,50 @@
+// сздание переменно name
+const name = "Катя";
+// создание переменой age
+let age = 30;
+
+// изменеие переменой age
+age = 40;
+
+/* вывод всех 
+переменных в консоль*/
+console.log(name, age);
+console.log(age);
+console.log(name);
+
+let numberOne = 2e10;
+let numberTwo = 2e-5;
+
+console.log(numberOne);
+console.log(numberTwo);
+
+let str = 5;
+str.toString;
+      
+console.log(str);
+
+let num1 = 0.3;
+let num2 = 0.6;
+
+console.log(Math.floor(num1), Math.floor(num2));
+console.log(Math.round(num1), Math.round(num2));
+console.log(Math.trunc(num1), Math.trunc(num2));
+
+console.log(isNaN(numberOne) === isNaN(numberTwo));
+
+console.log("JAVASCRIPT".toLowerCase());
+
+console.log(("javascript".slice(0,1)).toUpperCase() +"javascript".slice(1));
+
+
+
+function truncate(str,maxlength) {
+  num = str.length;
+    if (num > maxlength) {
+        console.log(str.slice(0,maxlength)+"...")
+    }
+    else {console.log(str)}
+      
+};
+
+truncate("testversion",4)
