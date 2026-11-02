@@ -22,7 +22,7 @@
     <p class="subtitle">Создайте аккаунт, чтобы бронировать книги и следить за заказами.</p>
 
     <div class="form-container">
-        <form action="#" method="post">
+        <form id="registerForm" action="#" method="post">
 
             <label for="name">Имя</label><br>
             <input type="text" id="name" name="name" placeholder="Введите ваше имя" required> <br><br>
@@ -31,7 +31,8 @@
             <input type="email" id="email" name="email" placeholder="example@mail.ru" required> <br><br>
 
             <label for="pwd">Пароль</label><br>
-            <input type="password" id="pwd" name="pwd" placeholder="Минимум 6 символов" minlength="6" required> <br><br>
+            <input type="password" id="pwd" name="pwd" placeholder="Минимум 8 символов" minlength="8" required> <br><br>
+            <div id="error-Message" style="color: red;"></div>
 
             <label>Выберите пол</label><br>
             <input type="radio" id="gender-m" name="gender" value="male" required>
@@ -47,7 +48,7 @@
             <button type="submit" class="btn-submit">Зарегистрироваться</button>
 
         </form>
-
+        
         <p class="login-link">Уже есть аккаунт? <a href="login.html">Войти</a></p>
     </div>
 
@@ -56,5 +57,23 @@
         <p>Контакты: info@library.ru | +7 (999) 123-45-67</p>
     </footer>
 
+    <script>
+        const form = document.getElementById('registerForm');
+        const passwordInput = document.getElementById('pwd');
+        const erroeMessage = document.getElementById('error-Message');
+
+        form.addEventListener('submit', (event) => {
+            event.preventDefault();
+            const password = passwordInput.value;
+            erroeMessage.textContent = '';
+            const passwordRegex = /^(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*(),.:"{}<>]).{8,}$/;
+
+            if (!passwordRegex.test(password)){
+                erroeMessage.textContent = 'Пароль должен содержать минимум 8 символов, обязательные спецсимволы, цифры, заглавную букву';
+                return;
+            }
+            console.log(' Регистрация рошла успешна!')
+        })
+    </script>
 </body>
 </html>
